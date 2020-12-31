@@ -1,10 +1,12 @@
 #include<iostream>
 #include<vector>
+#include"Node.cpp"
 using namespace std;
 class SuffixTree {
 	int Size;	//Size of string + sentinal
 	char* char_arr;	//Save character array
-	char** Suffixes;
+	char** Suffixes;//2D Array to store suffixes
+	Node* root;
 public:
 	SuffixTree(int s ,string a) {
 		Size = s;
