@@ -1,15 +1,15 @@
 #include<cstring>
 #include <iostream>
-#include"SuffixTree.cpp"
+#include"SuffixTrie.cpp"
 using namespace std;
 int main()
 {
-	string original;
-	cout << "enter String to build Suffix Tree" << endl;
-	cin >> original;
-	original += '$';	//add sentinal
-	int Size = original.size();
-	SuffixTree st(Size,original); //initialize character array
-	st.build_Suffix();
-	st.printSuffixes();
+    // Construct a suffix trie containing all suffixes of "bananabanaba$"
+
+    //            0123456789012
+    SuffixTrie t("bananabanaba$");
+    t.Search("ana"); // Prints: 1 3 7
+	t.Search("naba"); // Prints: 4 8
+
+    return 0;
 }
