@@ -35,7 +35,7 @@ class SuffixTrie {
 		int row_suffix=0;
 		for(int j=0;j<Size;j++ ,row_suffix++ ){
 			suffix = "";
-			for (int i = Size-j-1; i <Size; i++) {
+			for (int i = j; i < Size; i++) {
 				suffix += char_arr[i];
 			}
 			for(int k=0, column_suffix=0;k<suffix.size();k++, column_suffix++){
@@ -47,7 +47,7 @@ class SuffixTrie {
 	/*void printSuffixes() {
 		for (int i = 0; i <Size; i++) {	//for rows
 			int j = 0;
-			for(;j<Size;j++){	//for columns
+			for(;j<Size-i;j++){	//for columns
 				if (Suffixes[i][j] != '$')
 					cout << Suffixes[i][j];
 				else break;
@@ -76,6 +76,7 @@ public:
 		Suffixes=new char*[Size];		//build matrix of suffixes
 		for(int i=0;i<Size;i++)
 			Suffixes[i]=new char[Size];
+
 			root = new Node();
 			build_Suffix();	//prepare matrix of suffixes
 			//printSuffixes();
